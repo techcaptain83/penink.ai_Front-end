@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components{
+
+    .page{
+        @apply py-12 flex items-center justify-center min-h-[65vh] bg-gray-100 w-full;
+    }
+}

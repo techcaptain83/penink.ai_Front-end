@@ -27,12 +27,12 @@ const Templates = () => {
         <div>
             <Routes>
                 <Route path="/templates" element={<TemplatesPage />} />
-                
+
                 <Route path="/templates/amazon-product-description" element={<AmazonProductDescription />} />
                 <Route path="/templates/amazon-product-features" element={<AmazonProductFeatures />} />
                 <Route path="/templates/amazon-product-title" element={<AmazonProductTitle />} />
                 <Route path="/templates/blog-idea-outline" element={<BlogIdeaOutline />} />
-                <Route path="/templates/blogI-intro-paragraph" element={<BlogIntroParagraph />} />
+                <Route path="/templates/blog-intro-paragraph" element={<BlogIntroParagraph />} />
                 <Route path="/templates/blog-seo" element={<BlogSEOTitleMetaDescription />} />
                 <Route path="/templates/content-improver" element={<ContentImprover />} />
                 <Route path="/templates/facebook-ads" element={<FacebookAds />} />

@@ -9,6 +9,7 @@ interface ILink {
 
 const links: ILink[] = [
     { label: "Home", href: "/" },
+    {label:"Templates",href:"/templates"},
     { label: "features", href: "#features" },
     { label: "resources", href: "#resources" },
     { label: "use cases", href: "#usecases" },

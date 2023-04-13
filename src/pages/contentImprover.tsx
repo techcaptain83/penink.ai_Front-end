@@ -1,6 +1,6 @@
 import ContentInput from "../components/contentImprover/contentInput";
-import ContentOutput from "../components/contentImprover/contentOutput";
-import Templates from "../components/contentImprover/templates";
+import ContentOutput from "../components/contentEditor";
+import Templates from "../components/templatesSidebar";
 
 
 

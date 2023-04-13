@@ -33,7 +33,7 @@ const TemplatesPage = () => {
                             <div
                                 onClick={() => setActiveCategory(category)}
                                 key={category.id} className='flex flex-col  items-center space-y-1 cursor-pointer'>
-                                <div className={`p-2 rounded-full transition-all duration-200 ${activeCategory === category && "bg-primary text-white"}`}>
+                                <div className={`p-2 rounded-full transition-all duration-200 ${activeCategory === category && "bg-gray-300 text-white"}`}>
                                     <img src={`/icons/templates/${category.icon}`} alt={category.name} className='w-6 h-6 object-contain' />
                                 </div>
                                 <p className='text-sm'>{category.name}</p>

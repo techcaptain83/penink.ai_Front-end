@@ -13,15 +13,16 @@ import Subscription from './pages/subscription';
 import ResetPassword from './pages/resetPassword';
 import NotFound from './components/home/404';
 import Templates from './pages/templates';
+import TemplatesPage from './pages/templates/MainPage';
 
 
 function App() {
-
   return (
     <Router>
       <MainLayout>
         <Routes>
           <Route index path="/" element={<Home />} />
+          <Route path="/templates" element={<TemplatesPage />} />
           <Route path="/content-improver" element={<ContentImprover />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />

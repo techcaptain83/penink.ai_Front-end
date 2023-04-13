@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
-import TemplateSection from './templateSection'
+import TemplateSection from './templateSidebarSection'
 
 export interface ITemplateSection {
     title: string,
@@ -54,7 +54,7 @@ const sections: ITemplateSection[] = [
     }
 ]
 
-const Templates = () => {
+const TemplatesSidebar = () => {
     const [showMenu, setShowMenu] = useState(false);
     const [activeItem, setActiveItem] = useState<string | null>(null);
 
@@ -122,4 +122,4 @@ const Templates = () => {
     )
 }
 
-export default Templates
+export default TemplatesSidebar

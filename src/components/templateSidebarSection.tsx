@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { ITemplateSection } from './templates'
+import { ITemplateSection } from './templatesSidebar'
 import { FiChevronDown, FiChevronRight } from 'react-icons/fi'
 
 

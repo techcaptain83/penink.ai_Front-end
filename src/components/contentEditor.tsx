@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-import EditorComponent from '../editor';
-const ContentOutput = () => {
+import EditorComponent from './editor';
+
+const ContentEditor = () => {
     const [documentTitle, setDocumentTitle] = useState('Untitled Document');
     const [words, setWords] = useState<number>(0);
     const [chars, setChars] = useState<number>(0);
@@ -26,4 +27,4 @@ const ContentOutput = () => {
     )
 }
 
-export default ContentOutput;
+export default ContentEditor;

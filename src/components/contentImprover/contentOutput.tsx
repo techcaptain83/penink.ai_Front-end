@@ -1,35 +1,29 @@
-import React from 'react'
-import { AiOutlineAudio } from 'react-icons/ai'
-import { BsSend } from 'react-icons/bs'
-import { CiImageOn } from 'react-icons/ci'
-import { FaRegSmileBeam } from 'react-icons/fa'
+import React, { useState } from "react";
 
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import EditorComponent from '../editor';
 const ContentOutput = () => {
+    const [documentTitle, setDocumentTitle] = useState('Untitled Document');
+    const [words, setWords] = useState<number>(0);
+    const [chars, setChars] = useState<number>(0);
+
     return (
-        <div className='rounded-md  h-[90vh] mt-4 shadow-lg   space-y-3 flex flex-col justify-between sm:w-1/2 w-[95%]'
-        >
+        <div className='rounded-md h-[90vh] mt-4 shadow-lg space-y-3 flex flex-col sm:w-1/2 w-[95%] relative'>
             <div className='bg-primary text-white w-full rounded-t-md py-3 flex items-center justify-between px-3'>
-                <h2 >Untitled Document</h2>
-                <p>
-                    <span>0 words</span>
+                <input type="text"
+                    value={documentTitle}
+                    onChange={(e) => setDocumentTitle(e.target.value)}
+                    className="outline-none bg-primary text-white w-1/2"
+                />
+                <p className="space-x-1">
+                    <span>{words} words</span>
                     <span>.</span>
-                    <span>0 characters</span>
+                    <span>{chars} characters</span>
                 </p>
             </div>
-            <div className="w-full  border-t px-4 py-3 border-black/20 border-b rounded-b-md flex items-center justify-between space-x-2 text-black/50">
-                <AiOutlineAudio size={20} className="cursor-pointer hover:text-gray-900" />
-                <input
-                    type="text"
-                    className="outline-none bg-slate-50 rounded focus:bg-slate-100  px-2 py-1 placeholder:text-sm min-h-xl w-full"
-                    placeholder="Type here"
-                />
-                <CiImageOn size={24} className="cursor-pointer hover:text-gray-900" />
-                <FaRegSmileBeam size={20} className="cursor-pointer hover:text-gray-900" />
-                <BsSend size={20} className="cursor-pointer hover:text-gray-900" />
-            </div>
-
+            <EditorComponent setChars={setChars} setWords={setWords} />
         </div>
     )
 }
 
-export default ContentOutput
+export default ContentOutput;

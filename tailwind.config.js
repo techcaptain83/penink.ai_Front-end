@@ -16,9 +16,11 @@ export default {
     },
     screens: {
       msm: '0px',
-      ...defaultTheme.screens 
+      ...defaultTheme.screens
 
     }
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide')
+  ],
 }

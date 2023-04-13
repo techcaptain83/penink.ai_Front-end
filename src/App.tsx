@@ -12,6 +12,7 @@ import Signup from './pages/signup';
 import Subscription from './pages/subscription';
 import ResetPassword from './pages/resetPassword';
 import NotFound from './components/home/404';
+import Templates from './pages/templates';
 
 
 function App() {
@@ -26,10 +27,8 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/subscription" element={<Subscription />} />
           <Route path="/reset-password" element={<ResetPassword />} />
-          <Route path="*" element={<NotFound />} />
-
         </Routes>
-
+        <Templates />
       </MainLayout>
     </Router>
   )

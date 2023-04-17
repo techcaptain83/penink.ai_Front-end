@@ -1,8 +1,20 @@
-import React from 'react'
+import Textarea from '../../components/units/textarea'
 
 const InterviewQuestions = () => {
   return (
-    <div>InterviewQuestions</div>
+    <>
+      <Textarea
+        rows={2}
+        min={10}
+        title='Interview Subject'
+        name='subject'
+      />
+      <Textarea
+        rows={4}
+        name='description'
+        title='Describe the Interview'
+      />
+    </>
   )
 }
 

@@ -1,11 +1,14 @@
-import React from 'react'
-import TemplatesLayout from '../../components/templatesLayout'
+import Textarea from '../../components/units/textarea';
 
 const ContentImprover = () => {
     return (
-        <TemplatesLayout>
-
-        </TemplatesLayout>
+        <>
+            <Textarea
+                name="contentToImprove"
+                title='Content to improve'
+                rows={6}
+            />
+        </>
     )
 }
 export default ContentImprover;

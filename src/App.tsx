@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import NotFound from './components/home/404';
 import MainLayout from './components/mainLayout';
-import ContentImprover from "./pages/templates/contentImprover";
+import TemplatesLayout from "./components/templatesLayout";
 import Home from './pages/home';
 import Login from './pages/login';
 import ResetPassword from './pages/resetPassword';
@@ -18,6 +18,7 @@ import AmazonProductTitle from './pages/templates/amazonProductTitle';
 import BlogIdeaOutline from './pages/templates/blogIdeaOutline';
 import BlogIntroParagraph from './pages/templates/blogIntroParagraph';
 import BlogSEOTitleMetaDescription from './pages/templates/blogSEO';
+import ContentImprover from "./pages/templates/contentImprover";
 import FacebookAds from './pages/templates/facebookAds';
 import GoogleAds from './pages/templates/googleAds';
 import GoogleBusinessPost from './pages/templates/googleBusinessPost';
@@ -30,7 +31,6 @@ import PinterestTitleDescription from './pages/templates/pinterestTitleDescripti
 import YoutubeDescription from './pages/templates/youtubeDescription';
 import YoutubeIntroduction from './pages/templates/youtubeIntroduction';
 import YoutubeTitle from './pages/templates/youtubeTitle';
-import TemplatesLayout from "./components/templatesLayout";
 
 function App() {
 

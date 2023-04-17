@@ -46,7 +46,7 @@ const DropDown = ({ options, fullWidth = false, color ,onTop}: IProps) => {
                                     setSelectedOption(option)
                                     setShowDropdown(false)
                                 }}
-                                    className="block px-4 py-2 hover:bg-gray-800 hover:text-white">{option.label}</div>
+                                    className="block px-4 py-1 hover:bg-gray-800 hover:text-white">{option.label}</div>
                             </li>
                         ))
                     }

@@ -1,23 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
+import { ITemplate } from '../@types';
+import { templates } from '../store/templates';
 import ContentEditor from './contentEditor';
 import TemplatesSidebar from './templatesSidebar';
-import DropDown from './units/dropDown';
 import Button from './units/button';
-import { templates } from '../store/templates';
-import { ITemplate } from '../@types';
-import { Outlet, useLocation } from 'react-router-dom';
+import DropDown from './units/dropDown';
 interface Props {
     // children: React.ReactNode
 }
 const TemplatesLayout = ({ }: Props) => {
     const [currentTemplate, setCurrentTemplate] = useState<null | ITemplate>();
     const location = useLocation();
+    const [showButton, setShowButton] = useState(false)
 
 
     useEffect(() => {
         const href = location.pathname.slice(11);
         const template = templates.find(template => template.href === href);
         setCurrentTemplate(template);
+
+        href === "long-article" && setShowButton(true);
     }, [location.pathname]);
 
     return (
@@ -52,6 +55,13 @@ const TemplatesLayout = ({ }: Props) => {
                                 />
 
                             </div>
+                            {showButton &&
+                                <div className='w-full flex justify-center pt-2'>
+                                    <button className=' text-white bg-primary py-2 px-4 rounded-md hover:ring-1'>
+                                        Next : Outline
+                                    </button>
+                                </div>
+                            }
                         </div>
                         <div className="flex items-center justify-between w-full flex-wrap gap-4 lg:gap-2">
                             <div className="flex items-center space-x-2">

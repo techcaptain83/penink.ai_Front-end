@@ -50,6 +50,10 @@ const sections: ITemplateSection[] = [
                 href: "blog-seo"
             },
             {
+                label: "Paraphrasing / Rewriting (Quillbot)",
+                href: "paraphrasing"
+            },
+            {
                 label: "Interview Questions",
                 href: "interview-questions"
             }
@@ -106,7 +110,7 @@ const sections: ITemplateSection[] = [
             {
 
                 label: "Google my Business Posts",
-                href: "google-business-posts"
+                href: "google-business-post"
             }
         ]
     }

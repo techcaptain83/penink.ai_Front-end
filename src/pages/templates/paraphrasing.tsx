@@ -1,8 +1,14 @@
-import React from 'react'
+import Textarea from '../../components/units/textarea'
 
 const Paraphrasing = () => {
   return (
-    <div>Paraphrasing</div>
+    <>
+      <Textarea
+        rows={6}
+        name='text'
+        title='The text that should get rewritten, like with Quillbot!'
+      />
+    </>
   )
 }
 

@@ -1,8 +1,21 @@
-import React from 'react'
+import Textarea from '../../components/units/textarea'
 
 const blogSEOTitleMetaDescription = () => {
     return (
-        <div>blogSEOTitleMetaDescription</div>
+        <>
+            <Textarea
+                rows={1}
+                min={10}
+                title="product name"
+                note='Minimum of 10 characters'
+                name='name'
+            />
+            <Textarea
+                rows={5}
+                name='description'
+                title='Short Description'
+            />
+        </>
     )
 }
 

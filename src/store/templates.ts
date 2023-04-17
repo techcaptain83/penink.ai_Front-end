@@ -3,32 +3,32 @@ import { ICategory, ITemplate } from "../@types";
 export const categories: ICategory[] = [
     {
         id: 1,
-        name: "All",
+        name: "group_all",
         icon: "all.svg"
     },
     {
         id: 2,
-        name: "Youtube",
+        name: "group_youtube",
         icon: "youtube.svg"
     },
     {
         id: 3,
-        name: "Blog",
+        name: "group_blog",
         icon: "blog.svg"
     },
     {
         id: 4,
-        name: "Amazon",
+        name: "group_amazon",
         icon: "amazon.svg"
     },
     {
         id: 5,
-        name: "Ads",
+        name: "group_ads",
         icon: "ads.svg"
     },
     {
         id: 6,
-        name: "Social Media",
+        name: "group_social_media",
         icon: "social-media.svg"
     }
 ]
@@ -36,116 +36,116 @@ export const categories: ICategory[] = [
 export const templates: ITemplate[] = [
     {
         category: 2,
-        title: "Video Description - YouTube",
-        description: "Create unique descriptions for YouTube videos that rank well in search.",
+        title: "youtube_description",
+        description: "youtube_description_content",
         href: "youtube-description"
     },
     {
         category: 2,
-        title: "Video Script Hook and Introduction",
-        description: "Create a video intro that will capture your viewers attention and compel them to watch all the way through.",
+        title: "youtube_introduction",
+        description: "youtube_introduction_content",
         href: "youtube-introduction"
     },
     {
         category: 2,
-        title: "Video Titles",
-        description: "Create engaging, click-worthy titles for your videos that will rank on Youtube.",
+        title: "youtube_title",
+        description: "youtube_title_content",
         href: "youtube-title"
     },
     {
         category: 3,
-        title: "Complete long-form article",
-        description: "Get a summarized version from a piece of content.",
+        title: "long_article_title",
+        description: "long_article_content",
         href: "long-article"
     },
     {
         category: 3,
-        title: "Content Improver",
-        description: "Take a piece of content and rewrite it to make it more interesting, creative, and engaging.",
+        title: "content_improver",
+        description: "content_improver_content",
         href: "content-improver"
     },
     {
         category: 3,
-        title: "Blog Idea & Outline",
-        description: "Generate ideas and content structure for articles.",
+        title: "blog_idea_outline",
+        description: "blog_idea_outline_content",
         href: "blog-idea-outline"
     },
     {
         category: 3,
-        title: "Blog Post Intro Paragraph",
-        description: "Blast through writers block by letting Watsom write your opening paragraph.",
+        title: "blog_intro_paragraph",
+        description: "blog_intro_paragraph_content",
         href: "blog-intro-paragraph"
     },
     {
         category: 3,
-        title: "SEO - Blog Posts - Title and Meta Descriptions",
-        description: "Write SEO optimized title tags and meta descriptions for blog posts that will rank well on Google.",
+        title: "blog_seo_title_meta_description",
+        description: "blog_seo_title_meta_description_content",
         href: "blog-seo"
     },
     {
         category: 3,
-        title: "Paraphrasing / Rewriting (Quillbot)",
-        description: "Paraphrasing / Rewriting texts using Quillbot.",
+        title: "paraphrasing_rewrite_quillbot",
+        description: "paraphrasing_rewrite_quillbot_content",
         href: "paraphrasing"
     },
     {
         category: 3,
-        title: "Interview Questions",
-        description: "Inspiration for Interview Questions",
+        title: "interview_question",
+        description: "interview_question_content",
         href: "interview-questions"
     },
     {
         category: 4,
-        title: "Amazon Product Features (bullets)",
-        description: "Create key feature and benefit bullet points for Amazon listing under the 'about this item' section.",
+        title: "amazon_product_feature",
+        description: "amazon_product_feature_content",
         href: "amazon-product-features"
     },
     {
         category: 4,
-        title: "Amazon Product Title",
-        description: "Create compelling product title for Amazon listings.",
+        title: "amazon_product_title",
+        description: "amazon_product_title_content",
         href: "amazon-product-title"
     },
     {
         category: 4,
-        title: "Amazon Product Description (paragraph)",
-        description: "Create compelling product descriptions for Amazon listings.",
+        title: "amazon_product_description",
+        description: "amazon_product_description_content",
         href: "amazon-product-description"
     },
     {
         category: 5,
-        title: "Facebook Ads",
-        description: "Create high converting copy for the 'Headlines' section of your Facebook Ads",
+        title: "facebook_ads",
+        description: "facebook_ads_content",
         href: "facebook-ads"
     },
     {
         category: 5,
-        title: "Google Ads",
-        description: "Create high converting copy for the 'Headlines' section of your Google Ads",
+        title: "google_ads",
+        description: "google_ads_content",
         href: "google-ads"
     },
     {
         category: 6,
-        title: "Pinterest Title & Description",
-        description: "Create compelling pinterest description",
+        title: "pinterest_title_description",
+        description: "pinterest_title_description_content",
         href: "pinterest-title-description"
     },
     {
         category: 6,
-        title: "Photo Post Captions",
-        description: "Write catchy captions for your Instagram posts.",
+        title: "photo_post_caption",
+        description: "photo_post_caption_content",
         href: "photo-post-captions"
     },
     {
         category: 6,
-        title: "Opinion piece / Column",
-        description: "Write an Opinion piece / Column",
+        title: "opinion_piece_column",
+        description: "opinion_piece_column_content",
         href: "opinion-piece-column"
     },
     {
         category: 6,
-        title: "Google my Business Posts",
-        description: "Writes Google My Business posts",
+        title: "google_business_post",
+        description: "google_business_post_content",
         href: "google-business-post"
-    },
+    }, 
 ]

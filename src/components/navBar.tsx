@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
+import { FaChevronDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Logo from "./units/logo";
 
@@ -9,20 +11,43 @@ interface ILink {
 
 const links: ILink[] = [
     { label: "Home", href: "/" },
-    {label:"Templates",href:"/templates"},
+    { label: "Templates", href: "/templates" },
     { label: "features", href: "#features" },
     { label: "resources", href: "#resources" },
     { label: "use cases", href: "#usecases" },
     { label: "blog", href: "#blog" },
     { label: "pricing", href: "#pricing" },
 ]
+
+enum Lang {
+    en = "en",
+    fr = "fr",
+    sp = "sp"
+}
+
 const NavBar = () => {
-    const [shownav, setShowNav] = useState<boolean>(false)
+    const [shownav, setShowNav] = useState<boolean>(false);
+    const [showChangeLang, setShowChangeLang] = useState<boolean>(false);
+    const { i18n } = useTranslation();
+
+    const handleChangeLang = (lang: Lang) => {
+        i18n.changeLanguage(lang);
+        setShowChangeLang(false);
+    }
+
+    const languageOptions: {
+        label: string;
+        value: Lang
+    }[] = [
+            { label: "English", value: Lang.en },
+            { label: "Français", value: Lang.fr },
+            { label: "Español", value: Lang.sp }
+        ]
+
     return (
         <div className='bg-black/80 md:w-full h-[10vh] md:px-14 msm:px-4 flex items-center justify-between'>
-            {/* <img src='/logo.png' alt='logo' className='w-24' /> */}
-            
-            <Logo/>
+
+            <Logo />
             <div className='flex items-center md:flex msm:hidden space-x-6'>
                 {links.map((link, index) => (
                     <Link to={link.href} key={index}>
@@ -55,15 +80,46 @@ const NavBar = () => {
                 </button>
             </div>
             }
-            <div className="w-fit h-fit msm:hidden md:block">
+            <div className="w-fit h-fit msm:hidden md:flex items-center space-x-5">
 
                 <Link to={'/login'}>
                     <button className='bg-primary hover:ring-2 ring-gray-400 transition-all duration-200 text-white rounded-lg py-2 px-6'>
                         Login
                     </button>
                 </Link>
+                <div className="w-fit h-fit msm:hidden md:block">
+                    <div className="flex items-center gap-2">
+                        {/* <div className="p-2 rounded-full bg-primary flex items-center justify-center">
+                            <p className='text-white text-sm uppercase'>{i18n.language.slice(0, 2)}</p>
+                        </div>
+                        <FaChevronDown onClick={() => setShowChangeLang(true)}
+                            size={12} className="cursor-pointer text-white/90 hover:text-white" /> */}
+
+                        <div>
+                            <button onClick={() => setShowChangeLang(!showChangeLang)}
+                                data-dropdown-toggle="dropdown" className="text-white bg-primary focus:ring-2 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center space-x-2 inline-flex items-center uppercase" type="button">
+                                <span>{i18n.language}</span>
+                                <FaChevronDown />
+                            </button>
+                            {showChangeLang && <div id="dropdown" className={`z-20 bg-blackish absolute   text-black divide-y divide-gray-100 rounded-md shadow`}
+                            >
+                                <ul className="py-2 text-sm text-gray-200" aria-labelledby="dropdownDefaultButton">
+                                    {
+                                        languageOptions.map((option, i) => (
+                                            <li key={i}>
+                                                <div role="button" onClick={() => handleChangeLang(option.value)}
+                                                    className="block px-4 py-1 hover:bg-gray-800 hover:text-white">{option.label}</div>
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                            </div>}
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+            {/* language in a circle and dropdown */}
+        </div >
     )
 }
 

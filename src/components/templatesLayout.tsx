@@ -6,13 +6,15 @@ import ContentEditor from './contentEditor';
 import TemplatesSidebar from './templatesSidebar';
 import Button from './units/button';
 import DropDown from './units/dropDown';
+import { useTranslation } from 'react-i18next';
 interface Props {
     // children: React.ReactNode
 }
 const TemplatesLayout = ({ }: Props) => {
     const [currentTemplate, setCurrentTemplate] = useState<null | ITemplate>();
     const location = useLocation();
-    const [showButton, setShowButton] = useState(false)
+    const [showButton, setShowButton] = useState(false);
+    const { t } = useTranslation();
 
 
     useEffect(() => {
@@ -29,8 +31,8 @@ const TemplatesLayout = ({ }: Props) => {
             <div className="flex sm:flex-row flex-col w-full md:w-[78vw] sm:space-x-4 lg:space-x-8 xl:space-x-10 md:px-4 lg:px-8 lg:pb-4">
                 <div className='rounded-md h-[90vh]  shadow-lg mt-4  bg-white sm:w-1/2 w-[95%] flex flex-col'>
                     <div className='bg-primary w-full rounded-t-md py-3 flex items-center px-4 flex-col space-y-2'>
-                        <h2 className="capitalize text-xl text-center font-medium  text-white">{currentTemplate?.title}</h2>
-                        <p className='text-white text-center text-sm'>{currentTemplate?.description}</p>
+                        <h2 className="capitalize text-xl text-center font-medium  text-white">{t(`${currentTemplate?.title}`)}</h2>
+                        <p className='text-white text-center text-sm'>{t(`${currentTemplate?.description}`)}</p>
                     </div>
 
                     <div className="py-3   px-3  h-full flex flex-col pb-8 justify-between ">

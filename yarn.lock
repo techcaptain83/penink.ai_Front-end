@@ -176,6 +176,13 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.19.0"
 
+"@babel/runtime@^7.19.4", "@babel/runtime@^7.20.6":
+  version "7.21.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.21.0.tgz#5b55c9d394e5fcf304909a8b00c07dc217b56673"
+  integrity sha512-xwII0//EObnq89Ji5AKYQaRYiW/nZ3llSv29d49IuxPhKbtJoLP+9QUUZ4nVragQVtaVGeZrpB+ZtG/Pdy/POw==
+  dependencies:
+    regenerator-runtime "^0.13.11"
+
 "@babel/template@^7.20.7":
   version "7.20.7"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.20.7.tgz#a15090c2839a83b02aa996c0b4994005841fd5a8"
@@ -594,7 +601,7 @@ core-js@^3.6.4:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.30.0.tgz#64ac6f83bc7a49fd42807327051701d4b1478dea"
   integrity sha512-hQotSSARoNh1mYPi9O2YaWeiq/cEB95kOrFb4NCrO4RIFt1qqNpKsaE+vy/L3oiqvND5cThqXzUU3r9F7Efztg==
 
-cross-fetch@^3.0.4:
+cross-fetch@3.1.5, cross-fetch@^3.0.4:
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.1.5.tgz#e1389f44d9e7ba767907f7af8454787952ab534f"
   integrity sha512-lvb1SBsI0Z7GDwmuid+mU3kWVBwTVUbe7S0H52yaaAdQOXq2YktTCZdlAcNKFzE6QtRz0snpw9bNiPeOIkkQvw==
@@ -812,6 +819,11 @@ globals@^11.1.0:
   resolved "https://registry.yarnpkg.com/globals/-/globals-11.12.0.tgz#ab8795338868a0babd8525758018c2a7eb95c42e"
   integrity sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==
 
+hamt_plus@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/hamt_plus/-/hamt_plus-1.0.2.tgz#e21c252968c7e33b20f6a1b094cd85787a265601"
+  integrity sha512-t2JXKaehnMb9paaYA7J0BX8QQAY8lwfQ9Gjf4pg/mk4krt+cmwmU652HOoWonf+7+EQV97ARPMhhVgU1ra2GhA==
+
 has-flag@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-3.0.0.tgz#b5d454dc2199ae225699f3467e5a07f3b955bafd"
@@ -824,10 +836,38 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+html-parse-stringify@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/html-parse-stringify/-/html-parse-stringify-3.0.1.tgz#dfc1017347ce9f77c8141a507f233040c59c55d2"
+  integrity sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==
+  dependencies:
+    void-elements "3.1.0"
+
 html-to-draftjs@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/html-to-draftjs/-/html-to-draftjs-1.5.0.tgz#0df0eabf429deaedb63f5c859889e2c983606e86"
   integrity sha512-kggLXBNciKDwKf+KYsuE+V5gw4dZ7nHyGMX9m0wy7urzWjKGWyNFetmArRLvRV0VrxKN70WylFsJvMTJx02OBQ==
+
+i18next-browser-languagedetector@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/i18next-browser-languagedetector/-/i18next-browser-languagedetector-7.0.1.tgz#ead34592edc96c6c3a618a51cb57ad027c5b5d87"
+  integrity sha512-Pa5kFwaczXJAeHE56CHG2aWzFBMJNUNghf0Pm4SwSrEMps/PTKqW90EYWlIvhuYStf3Sn1K0vw+gH3+TLdkH1g==
+  dependencies:
+    "@babel/runtime" "^7.19.4"
+
+i18next-http-backend@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/i18next-http-backend/-/i18next-http-backend-2.2.0.tgz#f77c06dc8e766c7588bb38da2f5fa0614ba67b3f"
+  integrity sha512-Z4sM7R6tzdLknSPER9GisEBxKPg5FkI07UrQniuroZmS15PHQrcCPLyuGKj8SS68tf+O2aEDYSUnmy1TZqZSbw==
+  dependencies:
+    cross-fetch "3.1.5"
+
+i18next@^22.4.14:
+  version "22.4.14"
+  resolved "https://registry.yarnpkg.com/i18next/-/i18next-22.4.14.tgz#18dd94e9adc2618497c7de101a206e1ca3a18727"
+  integrity sha512-VtLPtbdwGn0+DAeE00YkiKKXadkwg+rBUV+0v8v0ikEjwdiJ0gmYChVE4GIa9HXymY6wKapkL93vGT7xpq6aTw==
+  dependencies:
+    "@babel/runtime" "^7.20.6"
 
 immutable@~3.7.4:
   version "3.7.6"
@@ -1147,6 +1187,14 @@ react-draft-wysiwyg@^1.15.0:
     linkify-it "^2.2.0"
     prop-types "^15.7.2"
 
+react-i18next@^12.2.0:
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-12.2.0.tgz#010e3f6070b8d700442947233352ebe4b252d7a1"
+  integrity sha512-5XeVgSygaGfyFmDd2WcXvINRw2WEC1XviW1LXY/xLOEMzsCFRwKqfnHN+hUjla8ZipbVJR27GCMSuTr0BhBBBQ==
+  dependencies:
+    "@babel/runtime" "^7.20.6"
+    html-parse-stringify "^3.0.1"
+
 react-icons@^4.8.0:
   version "4.8.0"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.8.0.tgz#621e900caa23b912f737e41be57f27f6b2bff445"
@@ -1197,6 +1245,18 @@ readdirp@~3.6.0:
   integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
   dependencies:
     picomatch "^2.2.1"
+
+recoil@^0.7.7:
+  version "0.7.7"
+  resolved "https://registry.yarnpkg.com/recoil/-/recoil-0.7.7.tgz#c5f2c843224384c9c09e4a62c060fb4c1454dc8e"
+  integrity sha512-8Og5KPQW9LwC577Vc7Ug2P0vQshkv1y3zG3tSSkWMqkWSwHmE+by06L8JtnGocjW6gcCvfwB3YtrJG6/tWivNQ==
+  dependencies:
+    hamt_plus "1.0.2"
+
+regenerator-runtime@^0.13.11:
+  version "0.13.11"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz#f6dca3e7ceec20590d07ada785636a90cdca17f9"
+  integrity sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==
 
 resolve@^1.1.7, resolve@^1.22.1:
   version "1.22.2"
@@ -1387,6 +1447,11 @@ vite@^4.1.0:
     rollup "^3.18.0"
   optionalDependencies:
     fsevents "~2.3.2"
+
+void-elements@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-3.1.0.tgz#614f7fbf8d801f0bb5f0661f5b2f5785750e4f09"
+  integrity sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==
 
 webidl-conversions@^3.0.0:
   version "3.0.1"

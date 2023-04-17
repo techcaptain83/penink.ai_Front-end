@@ -17,7 +17,6 @@ const DropDown = ({ options, fullWidth = false, color ,onTop}: IProps) => {
     const [selectedOption, setSelectedOption] = useState(options[0]);
     const [showDropdown, setShowDropdown] = useState(false)
 
-
     return (
         <div className="mt-2 relative">
             <button onClick={() => setShowDropdown(!showDropdown)}
@@ -38,7 +37,7 @@ const DropDown = ({ options, fullWidth = false, color ,onTop}: IProps) => {
 
             {showDropdown && <div id="dropdown" className={`z-20 bg-blackish absolute right-0  text-black divide-y divide-gray-100 rounded-md shadow min-w-[3.5rem] ${onTop && "bottom-10"}`}
             >
-                <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                <ul className="py-2 text-sm text-gray-200" aria-labelledby="dropdownDefaultButton">
                     {
                         options.map((option, i) => (
                             <li key={i}>

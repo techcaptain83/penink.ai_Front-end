@@ -1,4 +1,3 @@
-import React from 'react'
 
 interface IProps {
     rows: number;
@@ -11,7 +10,7 @@ interface IProps {
 const Textarea = ({ rows, title, name, note, min }: IProps) => {
     return (
         <div className=''>
-            <label htmlFor={name} className="block font-medium leading-6 text-gray-900">
+            <label htmlFor={name} className="block capitalize font-medium leading-6 text-gray-900">
                 {title}
             </label>
             <div className="mt-2">
@@ -20,7 +19,7 @@ const Textarea = ({ rows, title, name, note, min }: IProps) => {
                     name={name}
                     minLength={min}
                     id={name}
-                    className="block w-full text-sm rounded-md border-0  text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 focus:ring-1  focus:ring-blue-400  sm:leading-6 p-2"
+                    className="block w-full text-sm rounded-md border-0  text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 focus:ring-2  focus:ring-primary  sm:leading-6 p-2 outline-none"
                 />
                 <p className='underline text-gray-400 text-sm pt-2'>{note}</p>
             </div>

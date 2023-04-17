@@ -39,7 +39,7 @@ function App() {
       <MainLayout>
         <Routes>
           <Route index path="/" element={<Home />} />
-          <Route path="/templates" element={<TemplatesPage />} />
+          <Route path="/templates" index element={<TemplatesPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/subscription" element={<Subscription />} />

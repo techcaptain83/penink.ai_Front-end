@@ -146,7 +146,20 @@ const TemplatesSidebar = () => {
 
     useEffect(() => {
         setSearchTerm('');
-    }, [location.pathname])
+        setShowMenu(false);
+    }, [location.pathname]);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth > 768) {
+                setShowMenu(false);
+            }
+        }
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        }
+    }, []);
 
 
     return (
@@ -176,7 +189,7 @@ const TemplatesSidebar = () => {
                 </div>
                 {/* search results */}
                 {(searchResults && searchResults.length > 0) &&
-                    <div className='absolute top-[25%] w-full   bg-white rounded-md shadow-md p-4 text-black'>
+                    <div className='absolute top-[25%] w-full   bg-white rounded-md shadow-md p-4 text-black z-10'>
                         {
                             searchResults.map((template) => (
                                 <Link key={template.title} to={`/templates/${template.href}`}>
@@ -204,16 +217,37 @@ const TemplatesSidebar = () => {
             {showMenu && (
                 <div className='h-full px-4 bg-blackish z-20 py-4 text-white space-y-3 xl:w-[22vw] msm:fixed msm:right-0 msm:top-0 msm:w-full  '>
                     <div className="flex items-center ">
-                        <button className="p-6  text-sm flex md:hidden msm:block" onClick={() => setShowMenu(false)}>&lt;Back</button>
-                        <p className='w-full text-white  text-2xl font-semibold'>Try Watson pro</p>
+                        <button className="p-6  text-sm flex  md:hidden msm:block " onClick={() => setShowMenu(false)}>&lt;Back</button>
+                        <p className='w-full text-white  text-2xl font-semibold'>{t("try")} Panink.ai {t("pro")}</p>
                     </div>
                     <div className='text-black font-semibold w-full py-3 pl-3  bg-white rounded-lg'>
-                        Templates
+                        {t("templates")}
                     </div>
-                    <div className=' w-full py-3 pl-3  bg-white rounded-lg space-x-2 flex items-center'>
+                    <div className=' w-full  pl-3  bg-white rounded-lg space-x-2 flex items-center'>
                         <AiOutlineSearch size={20} className="text-gray-400" />
-                        <span className='text-gray-400'>Search</span>
+                        <input
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            placeholder="Search"
+                            type="text"
+                            className="outline-none text-black rounded  px-2 py-3 placeholder:text-sm w-full"
+                        />
                     </div>
+                    {(searchResults && searchResults.length > 0) &&
+                        <div className='absolute top-[25%] w-full   bg-white rounded-md shadow-md p-4 text-black z-10'>
+                            {
+                                searchResults.map((template) => (
+                                    <Link key={template.title} to={`/templates/${template.href}`}>
+                                        <div
+                                            className='flex flex-col space-y-1 p-2 rounded-md hover:bg-gray-100 transition-all duration-200'>
+                                            <p className='text-sm font-medium'>{t(`${template.title}`)}</p>
+                                            <p className='text-[13px] truncate'>{t(`${template.description}`)}</p>
+                                        </div>
+                                    </Link>
+                                ))
+                            }
+                        </div>
+                    }
                     <div className="space-y-2 pt-4">
                         {
                             sections.map((section, i) => (

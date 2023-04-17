@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
 import { FaChevronDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -44,6 +44,18 @@ const NavBar = () => {
             { label: "Español", value: Lang.sp }
         ]
 
+    useEffect(() => {
+        const resizeHandler = () => {
+            if (window.innerWidth > 768) {
+                setShowNav(false)
+            }
+        }
+        window.addEventListener("resize", resizeHandler)
+        return () => {
+            window.removeEventListener("resize", resizeHandler)
+        }
+    }, [])
+
     return (
         <div className='bg-black/80 md:w-full h-[10vh] md:px-14 msm:px-4 flex items-center justify-between'>
 
@@ -72,6 +84,26 @@ const NavBar = () => {
                             Login
                         </button>
                     </Link>
+                    <div>
+                        <button onClick={() => setShowChangeLang(!showChangeLang)}
+                            data-dropdown-toggle="dropdown" className="text-white bg-primary focus:ring-2 focus:outline-none focus:ring-blue-300 font-medium rounded-lg  px-6 py-2 text-center space-x-2 inline-flex items-center uppercase" type="button">
+                            <span>{i18n.language}</span>
+                            <FaChevronDown />
+                        </button>
+                        {showChangeLang && <div id="dropdown" className={`z-20 bg-blackish absolute   text-black divide-y divide-gray-100 rounded-md shadow`}
+                        >
+                            <ul className="py-2 text-sm text-gray-200" aria-labelledby="dropdownDefaultButton">
+                                {
+                                    languageOptions.map((option, i) => (
+                                        <li key={i}>
+                                            <div role="button" onClick={() => handleChangeLang(option.value)}
+                                                className="block px-4 py-1 hover:bg-gray-800 hover:text-white">{option.label}</div>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </div>}
+                    </div>
                 </div>
                 <button className="w-fit h-fit msm:block md:hidden mt-6" onClick={() => setShowNav(!setShowNav)}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -89,12 +121,6 @@ const NavBar = () => {
                 </Link>
                 <div className="w-fit h-fit msm:hidden md:block">
                     <div className="flex items-center gap-2">
-                        {/* <div className="p-2 rounded-full bg-primary flex items-center justify-center">
-                            <p className='text-white text-sm uppercase'>{i18n.language.slice(0, 2)}</p>
-                        </div>
-                        <FaChevronDown onClick={() => setShowChangeLang(true)}
-                            size={12} className="cursor-pointer text-white/90 hover:text-white" /> */}
-
                         <div>
                             <button onClick={() => setShowChangeLang(!showChangeLang)}
                                 data-dropdown-toggle="dropdown" className="text-white bg-primary focus:ring-2 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center space-x-2 inline-flex items-center uppercase" type="button">

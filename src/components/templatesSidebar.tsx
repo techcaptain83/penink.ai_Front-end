@@ -59,7 +59,7 @@ const sections: ITemplateSection[] = [
                 href: "interview-questions"
             }
         ]
-    },
+},
     {
         title: "group_amazon",
         items: [

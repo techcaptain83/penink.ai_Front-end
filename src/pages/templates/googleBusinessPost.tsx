@@ -8,7 +8,7 @@ const GoogleBusinessPost = () => {
         <>
             <div className='w-full'>
                 <label htmlFor="contentToImprove" className="block font-medium leading-6 text-gray-900">
-                    Post type
+                    post_type
                 </label>
                 <DropDown fullWidth options={[
                     { label: "Event", value: "event" },
@@ -20,7 +20,7 @@ const GoogleBusinessPost = () => {
             </div>
             <Textarea
                 name='description'
-                title='short description'
+                title='short_description'
                 rows={2}
             />
         </>

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 
 interface IProps {
     rows: number;
@@ -8,10 +9,13 @@ interface IProps {
 }
 
 const Textarea = ({ rows, title, name, note, min }: IProps) => {
+
+    const { t } = useTranslation();
+
     return (
         <div className=''>
             <label htmlFor={name} className="block capitalize font-medium leading-6 text-gray-900">
-                {title}
+                {t(title)}
             </label>
             <div className="mt-2">
                 <textarea

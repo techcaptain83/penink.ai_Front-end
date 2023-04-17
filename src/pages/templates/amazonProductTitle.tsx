@@ -6,13 +6,13 @@ const AmazonProductTitle = () => {
             <Textarea
                 rows={2}
                 min={10}
-                title='What is the product about ?'
-                note='Minimum of 10 characters'
+                title='amazon_product_about'
+                note='minimum_10_character'
                 name='about'
             />
             <Textarea
                 rows={1}
-                note='Separate keywords with ","'
+                note='separate_keywords_with'
                 name='keywords'
                 title='keywords'
             />

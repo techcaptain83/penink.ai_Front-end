@@ -5,7 +5,7 @@ const ContentImprover = () => {
         <>
             <Textarea
                 name="contentToImprove"
-                title='Content to improve'
+                title='content_to_improve'
                 rows={6}
             />
         </>

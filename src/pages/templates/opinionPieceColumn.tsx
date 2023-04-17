@@ -7,21 +7,21 @@ const OpinionPieceColumn = () => {
       <Textarea
         name="Title"
         rows={1}
-        note='Minimum of 10 characters'
-        title='Title of the opinion'
+        note='minimum_10_character'
+        title='title_opinion'
       />
 
       <Textarea
         name='mainSubject'
         rows={5}
-        title='Main Subject'
+        title='content_what_main_subject'
       />
 
       <Textarea
         title='audience'
         rows={1}
         name='audience'
-        
+
       />
 
     </>

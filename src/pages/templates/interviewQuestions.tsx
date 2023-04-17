@@ -6,13 +6,13 @@ const InterviewQuestions = () => {
       <Textarea
         rows={2}
         min={10}
-        title='Interview Subject'
+        title='interview_subject'
         name='subject'
       />
       <Textarea
         rows={4}
         name='description'
-        title='Describe the Interview'
+        title='interview_describe'
       />
     </>
   )

@@ -5,14 +5,14 @@ const YoutubeDescription = () => {
     <>
       <Textarea
         name="videoTitle"
-        title='Video Title'
+        title='youtube_title'
         rows={1}
-        note='Minimum of 10 characters'
+        note='minimum_10_character'
         min={10}
       />
       <Textarea
         rows={1}
-        note='Separate keywords with ","'
+        note='separate_keywords_with'
         name='keywords'
         title='keywords'
       />

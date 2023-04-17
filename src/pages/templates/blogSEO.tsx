@@ -6,14 +6,14 @@ const blogSEOTitleMetaDescription = () => {
             <Textarea
                 rows={1}
                 min={10}
-                title="product name"
-                note='Minimum of 10 characters'
+                title="product_name"
+                note='minimum_10_character'
                 name='name'
             />
             <Textarea
                 rows={5}
                 name='description'
-                title='Short Description'
+                title='short_description'
             />
         </>
     )

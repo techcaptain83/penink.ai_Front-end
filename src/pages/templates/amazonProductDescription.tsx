@@ -6,7 +6,7 @@ const AmazonProductDescription = () => {
     <>
       <Textarea
         name="productName"
-        title='product Name'
+        title='product_name'
         rows={1}
         min={6}
         note='Minimum of 6 characters'
@@ -14,7 +14,7 @@ const AmazonProductDescription = () => {
 
       <Textarea
         name='productInfo'
-        title='Product Info'
+        title='product_info'
         rows={6}
       />
     </>

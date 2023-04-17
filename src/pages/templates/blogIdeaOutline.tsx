@@ -5,14 +5,14 @@ const BlogIdeaOutline = () => {
         <>
             <Textarea
                 name="about"
-                title='What is your post about?'
+                title='post_about'
                 rows={1}
-                note='Minimum of 10 characters'
+                note='minimum_10_character'
                 min={10}
             />
             <Textarea
                 rows={1}
-                note='Separate keywords with ","'
+                note='separate_keywords_with'
                 name='keywords'
                 title='keywords'
             />

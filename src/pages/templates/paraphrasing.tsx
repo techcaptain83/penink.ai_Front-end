@@ -6,7 +6,7 @@ const Paraphrasing = () => {
       <Textarea
         rows={6}
         name='text'
-        title='The text that should get rewritten, like with Quillbot!'
+        title='content_to_rewrite_as_quillbot'
       />
     </>
   )

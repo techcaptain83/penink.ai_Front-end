@@ -5,14 +5,14 @@ const FacebookAds = () => {
     <>
       <Textarea
         name="shortDescription"
-        title='Short Description'
+        title='short_description'
         rows={1}
-        note='Minimum of 10 characters'
+        note='minimum_10_character'
         min={10}
       />
       <Textarea
         rows={1}
-        note='Separate keywords with ","'
+        note='separate_keywords_with'
         name='keywords'
         title='keywords'
       />

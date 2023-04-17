@@ -15,7 +15,7 @@ const ContentInput = () => {
 
                     <div className=''>
                         <label htmlFor="contentToImprove" className="block font-medium leading-6 text-gray-900">
-                            Content to improve
+                            content_to_improve
                         </label>
                         <div className="mt-2">
                             <textarea

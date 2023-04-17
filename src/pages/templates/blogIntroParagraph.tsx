@@ -6,8 +6,8 @@ const BlogIntroParagraph = () => {
             <Textarea
                 name="Title"
                 rows={1}
-                note='Minimum of 10 characters'
-                title='Blog title / topic'
+                note='minimum_10_character'
+                title='blog_title_topic'
             />
 
 

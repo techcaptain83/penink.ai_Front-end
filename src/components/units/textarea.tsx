@@ -25,7 +25,7 @@ const Textarea = ({ rows, title, name, note, min }: IProps) => {
                     id={name}
                     className="block w-full text-sm rounded-md border-0  text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 focus:ring-2  focus:ring-primary  sm:leading-6 p-2 outline-none"
                 />
-                <p className='underline text-gray-400 text-sm pt-2'>{note}</p>
+                {note && <p className='underline text-gray-400 text-sm pt-2'>{t(`${note}`)}</p>}
             </div>
         </div>
     )

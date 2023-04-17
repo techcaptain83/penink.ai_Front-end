@@ -16,7 +16,7 @@
     "blog_title_topic": "Título del blog / Tema",
     "minimum_10_character": "Mínimo de 10 caracteres",
     "keywords": "Letra clave",
-    "separate_keywords_with": "Separe las palabras clave con ",
+    "separate_keywords_with": "Separe las palabras clave con \",\"",
     "blog_intro_will_added": "Se añadirá una introducción al blog aquí",
     "generate_more_outline": "Generar más esquema",
     "regenerate_all": "ReGenerar todo",

@@ -16,7 +16,7 @@
     "blog_title_topic": "Titre de blog / Sujet",
     "minimum_10_character": "Minimum de 10 caractères",
     "keywords": "Mots-clés",
-    "separate_keywords_with": "Séparez les mots-clés avec",
+    "separate_keywords_with": "Séparez les mots-clés avec \",\"",
     "blog_intro_will_added": "Une introduction de blog sera ajoutée ici",
     "generate_more_outline": "Générer plus de plan",
     "regenerate_all": "Regénérer tout",

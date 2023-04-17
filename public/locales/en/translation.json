@@ -16,7 +16,7 @@
     "blog_title_topic": "Blog Title / Topic",
     "minimum_10_character": "Minimum of 10 characters",
     "keywords": "Keywords",
-    "separate_keywords_with": "Separate keywords with ",
+    "separate_keywords_with": "Separate keywords with \",\"",
     "blog_intro_will_added": "A Blog Intro will be added here",
     "generate_more_outline": "Generate more outline",
     "regenerate_all": "ReGenerate All",

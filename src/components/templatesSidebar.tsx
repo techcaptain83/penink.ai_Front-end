@@ -4,52 +4,110 @@ import TemplateSection from './templateSidebarSection'
 
 export interface ITemplateSection {
     title: string,
-    items: string[]
+    items: { label: string; href: string }[]
 }
 
 const sections: ITemplateSection[] = [
     {
         title: "YouTube",
         items: [
-            "Video Description - YouTube",
-            "Video Script Hook and Introduction",
-            "Video Titles"
+            {
+                label: "Video Description - YouTube",
+                href: "youtube-description"
+            },
+            {
+                label: "Video Script Hook and Introduction",
+                href: "youtube-introduction"
+            },
+            {
+                label: "Video Titles",
+                href: "youtube-title"
+            }
         ]
     },
     {
         title: "Blog",
         items: [
-            "Long Article",
-            "Content Improver",
-            "Blog Idea & Outline",
-            "Blgo Post Intro Paragraph",
-            "SEO - Blog Posts - Title and Meta Descriptions",
-            "Paraphrasing / Rewriting (Quillbot)",
-            "Interview Questions"
+            {
+                label: "Long Article",
+                href: "long-article"
+            },
+            {
+                label: "Content Improver",
+                href: "content-improver"
+            },
+            {
+
+                label: "Blog Idea & Outline",
+                href: "blog-idea-outline"
+            },
+            {
+                label: "Blog Post Intro Paragraph",
+                href: "blog-intro-paragraph"
+            },
+            {
+                label: "SEO - Blog Posts - Title and Meta Descriptions",
+                href: "blog-seo"
+            },
+            {
+                label: "Interview Questions",
+                href: "interview-questions"
+            }
         ]
     },
     {
         title: "Amazon",
         items: [
-            "Amazon Product Features (bullets)",
-            "Amazon Product Title",
-            "Amazon Product Description (paragraph)"
+            {
+                label: "Amazon Product Features (bullets)",
+                href: "amazon-product-features"
+            },
+            {
+
+                label: "Amazon Product Title",
+                href: "amazon-product-title"
+            },
+            {
+                label: "Amazon Product Description (paragraph)",
+                href: "amazon-product-description"
+            }
         ]
     },
     {
         title: "Ads",
         items: [
-            "Facebook Ads",
-            "Google Ads"
+            {
+                label: "Facebook Ads",
+                href: "facebook-ads"
+            },
+            {
+                label: "Google Ads",
+                href: "google-ads"
+
+            }
         ],
     },
     {
         title: "Social Media",
         items: [
-            "Pinterest Title & Description",
-            "Photo Post Captions",
-            "Opinion piece / Column",
-            "Google my Business Posts"
+            {
+
+                label: "Pinterest Title & Description",
+                href: "pinterest-title-description"
+            },
+            {
+                label: "Photo Post Captions",
+                href: "photo-post-captions"
+            },
+            {
+                label: "Opinion piece / Column",
+                href: "opinion-piece-column"
+            },
+            {
+
+                label: "Google my Business Posts",
+                href: "google-business-posts"
+            }
         ]
     }
 ]
@@ -113,7 +171,7 @@ const TemplatesSidebar = () => {
                                     key={`sec-${i}`}  {...section} />
                             ))
                         }
-                        
+
                     </div>
                 </div>
             )}

@@ -1,9 +1,11 @@
 import React from 'react'
+import TemplatesLayout from '../../components/templatesLayout'
 
 const ContentImprover = () => {
     return (
-        <div>ContentImprover</div>
+        <TemplatesLayout>
+
+        </TemplatesLayout>
     )
 }
-
-export default ContentImprover
+export default ContentImprover;

@@ -5,11 +5,11 @@ import DropDown from './units/dropDown';
 import Button from './units/button';
 import { templates } from '../store/templates';
 import { ITemplate } from '../@types';
-import { useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 interface Props {
-    children: React.ReactNode
+    // children: React.ReactNode
 }
-const TemplatesLayout = ({ children }: Props) => {
+const TemplatesLayout = ({ }: Props) => {
     const [currentTemplate, setCurrentTemplate] = useState<null | ITemplate>();
     const location = useLocation();
 
@@ -32,20 +32,7 @@ const TemplatesLayout = ({ children }: Props) => {
 
                     <div className="py-3   px-3  h-full flex flex-col pb-8 justify-between ">
                         <div className='space-y-3'>
-
-                            {/* <div className=''>
-                                <label htmlFor="contentToImprove" className="block font-medium leading-6 text-gray-900">
-                                    Content to improve
-                                </label>
-                                <div className="mt-2">
-                                    <textarea
-                                        rows={3}
-                                        name="conntentToImprove"
-                                        className="block w-full rounded-md border-0  text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-primary  sm:leading-6 p-2"
-                                    />
-                                </div>
-                            </div> */}
-                            {children}
+                            <Outlet />
                             <div className='w-full'>
                                 <label htmlFor="contentToImprove" className="block font-medium leading-6 text-gray-900">
                                     Tone

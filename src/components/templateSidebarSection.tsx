@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { ITemplateSection } from './templatesSidebar'
 import { FiChevronDown, FiChevronRight } from 'react-icons/fi'
+import { Link } from 'react-router-dom';
 
 
 interface IProps extends ITemplateSection {
@@ -28,9 +29,11 @@ const TemplateSection = ({ title, items, activeItem, setActiveItem }: IProps) =>
             {activeItem === title &&
                 <div className='pl-3 flex flex-col space-y-2 text-sm'>
                     {items.map((item, index) => (
-                        <div key={index} className='flex items-center cursor-pointer hover:text-gray-300'>
-                            {item}
-                        </div>
+                        <Link key={index} to={`${'/templates/' + item.href}`}>
+                            <div className='flex items-center cursor-pointer hover:text-gray-300'>
+                                {item.label}
+                            </div>
+                        </Link>
                     ))}
                 </div>
             }

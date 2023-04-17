@@ -1,7 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import TemplateSection from './templateSidebarSection'
 import { useTranslation } from 'react-i18next';
+import { ITemplate } from '../@types';
+import { templates } from '../store/templates';
+import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 export interface ITemplateSection {
     title: string,
@@ -59,7 +63,7 @@ const sections: ITemplateSection[] = [
                 href: "interview-questions"
             }
         ]
-},
+    },
     {
         title: "group_amazon",
         items: [
@@ -121,6 +125,29 @@ const TemplatesSidebar = () => {
     const [showMenu, setShowMenu] = useState(false);
     const [activeItem, setActiveItem] = useState<string | null>(null);
     const { t } = useTranslation();
+    const [searchResults, setSearchResults] = useState<ITemplate[] | null>(null);
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const location = useLocation();
+
+
+    useEffect(() => {
+        if (searchTerm === '') {
+            setSearchResults(null);
+            return;
+        }
+        const results = templates.filter((template) => {
+            const title = t(template.title);
+            const description = t(template.description);
+            return title.toLowerCase().includes(searchTerm.toLowerCase()) || description.toLowerCase().includes(searchTerm.toLowerCase());
+        });
+        setSearchResults(results.slice(0, 8));
+    }, [searchTerm]);
+
+    useEffect(() => {
+        setSearchTerm('');
+    }, [location.pathname])
+
 
     return (
         <>
@@ -129,7 +156,7 @@ const TemplatesSidebar = () => {
                     <path d="M3 18V16H21V18H3ZM3 13V11H21V13H3ZM3 8V6H21V8H3Z" fill="white" />
                 </svg>
             </button>
-            <div className='h-screen  px-4  bg-blackish z-20 py-4 text-white space-y-3 xl:w-[22vw]  md:block msm:hidden'>
+            <div className='h-screen  px-4  bg-blackish z-20 py-4 text-white space-y-3 xl:w-[22vw]  md:block msm:hidden relative'>
                 <div className="flex items-center ">
                     <button className="p-6  text-sm flex  md:hidden msm:block " onClick={() => setShowMenu(false)}>&lt;Back</button>
                     <p className='w-full text-white  text-2xl font-semibold'>{t("try")} Panink.ai {t("pro")}</p>
@@ -139,11 +166,30 @@ const TemplatesSidebar = () => {
                 </div>
                 <div className=' w-full  pl-3  bg-white rounded-lg space-x-2 flex items-center'>
                     <AiOutlineSearch size={20} className="text-gray-400" />
-                    <input placeholder="Search"
+                    <input
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        placeholder="Search"
                         type="text"
                         className="outline-none text-black rounded  px-2 py-3 placeholder:text-sm w-full"
                     />
                 </div>
+                {/* search results */}
+                {(searchResults && searchResults.length > 0) &&
+                    <div className='absolute top-[25%] w-full   bg-white rounded-md shadow-md p-4 text-black'>
+                        {
+                            searchResults.map((template) => (
+                                <Link key={template.title} to={`/templates/${template.href}`}>
+                                    <div
+                                        className='flex flex-col space-y-1 p-2 rounded-md hover:bg-gray-100 transition-all duration-200'>
+                                        <p className='text-sm font-medium'>{t(`${template.title}`)}</p>
+                                        <p className='text-[13px] truncate'>{t(`${template.description}`)}</p>
+                                    </div>
+                                </Link>
+                            ))
+                        }
+                    </div>
+                }
                 <div className="space-y-2 pt-4">
                     {
                         sections.map((section, i) => (

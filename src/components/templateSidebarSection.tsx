@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { ITemplateSection } from './templatesSidebar'
 import { FiChevronDown, FiChevronRight } from 'react-icons/fi'
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 
 interface IProps extends ITemplateSection {
@@ -9,6 +10,8 @@ interface IProps extends ITemplateSection {
     setActiveItem: React.Dispatch<React.SetStateAction<string | null>>
 }
 const TemplateSection = ({ title, items, activeItem, setActiveItem }: IProps) => {
+
+    const { t } = useTranslation();
 
     const handleClick = () => {
         if (activeItem === title) {
@@ -23,7 +26,7 @@ const TemplateSection = ({ title, items, activeItem, setActiveItem }: IProps) =>
                 onClick={handleClick}
                 className={`transition-all duration-300 flex items-center space-x-2 cursor-pointer ${activeItem === title && "bg-black/50 py-1 rounded"}`}>
                 {activeItem === title ? <FiChevronDown size={20} /> : <FiChevronRight size={20} />}
-                <p >{title}</p>
+                <p >{t(`${title}`)}</p>
             </div>
 
             {activeItem === title &&
@@ -31,7 +34,7 @@ const TemplateSection = ({ title, items, activeItem, setActiveItem }: IProps) =>
                     {items.map((item, index) => (
                         <Link key={index} to={`${'/templates/' + item.href}`}>
                             <div className='flex items-center cursor-pointer hover:text-gray-300'>
-                                {item.label}
+                                {t(`${item.label}`)}
                             </div>
                         </Link>
                     ))}

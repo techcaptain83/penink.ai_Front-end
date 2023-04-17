@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import TemplateSection from './templateSidebarSection'
+import { useTranslation } from 'react-i18next';
 
 export interface ITemplateSection {
     title: string,
@@ -9,98 +10,98 @@ export interface ITemplateSection {
 
 const sections: ITemplateSection[] = [
     {
-        title: "YouTube",
+        title: "group_youtube",
         items: [
             {
-                label: "Video Description - YouTube",
+                label: "youtube_description",
                 href: "youtube-description"
             },
             {
-                label: "Video Script Hook and Introduction",
+                label: "youtube_introduction",
                 href: "youtube-introduction"
             },
             {
-                label: "Video Titles",
+                label: "youtube_title",
                 href: "youtube-title"
             }
         ]
     },
     {
-        title: "Blog",
+        title: "group_blog",
         items: [
             {
-                label: "Long Article",
+                label: "long_article",
                 href: "long-article"
             },
             {
-                label: "Content Improver",
+                label: "content_improver",
                 href: "content-improver"
             },
             {
 
-                label: "Blog Idea & Outline",
+                label: "blog_idea_outline",
                 href: "blog-idea-outline"
             },
             {
-                label: "Blog Post Intro Paragraph",
+                label: "blog_intro_paragraph",
                 href: "blog-intro-paragraph"
             },
             {
-                label: "SEO - Blog Posts - Title and Meta Descriptions",
+                label: "blog_seo_title_meta_description",
                 href: "blog-seo"
             },
             {
-                label: "Paraphrasing / Rewriting (Quillbot)",
+                label: "paraphrasing_rewrite_quillbot",
                 href: "paraphrasing"
             },
             {
-                label: "Interview Questions",
+                label: "interview_question",
                 href: "interview-questions"
             }
         ]
     },
     {
-        title: "Amazon",
+        title: "group_amazon",
         items: [
             {
-                label: "Amazon Product Features (bullets)",
+                label: "amazon_product_feature",
                 href: "amazon-product-features"
             },
             {
 
-                label: "Amazon Product Title",
+                label: "amazon_product_title",
                 href: "amazon-product-title"
             },
             {
-                label: "Amazon Product Description (paragraph)",
+                label: "amazon_product_description",
                 href: "amazon-product-description"
             }
         ]
     },
     {
-        title: "Ads",
+        title: "group_ads",
         items: [
             {
-                label: "Facebook Ads",
+                label: "facebook_ads",
                 href: "facebook-ads"
             },
             {
-                label: "Google Ads",
+                label: "google_ads",
                 href: "google-ads"
 
             }
         ],
     },
     {
-        title: "Social Media",
+        title: "group_social_media",
         items: [
             {
 
-                label: "Pinterest Title & Description",
+                label: "pinterest_title_description",
                 href: "pinterest-title-description"
             },
             {
-                label: "Photo Post Captions",
+                label: "photo_post_caption",
                 href: "photo-post-captions"
             },
             {
@@ -109,7 +110,7 @@ const sections: ITemplateSection[] = [
             },
             {
 
-                label: "Google my Business Posts",
+                label: "google_business_post",
                 href: "google-business-post"
             }
         ]
@@ -119,6 +120,7 @@ const sections: ITemplateSection[] = [
 const TemplatesSidebar = () => {
     const [showMenu, setShowMenu] = useState(false);
     const [activeItem, setActiveItem] = useState<string | null>(null);
+    const { t } = useTranslation();
 
     return (
         <>
@@ -130,10 +132,10 @@ const TemplatesSidebar = () => {
             <div className='h-screen  px-4  bg-blackish z-20 py-4 text-white space-y-3 xl:w-[22vw]  md:block msm:hidden'>
                 <div className="flex items-center ">
                     <button className="p-6  text-sm flex  md:hidden msm:block " onClick={() => setShowMenu(false)}>&lt;Back</button>
-                    <p className='w-full text-white  text-2xl font-semibold'>Try Watson pro</p>
+                    <p className='w-full text-white  text-2xl font-semibold'>{t("try")} Panink.ai {t("pro")}</p>
                 </div>
                 <div className='text-black font-semibold w-full py-3 pl-3  bg-white rounded-lg'>
-                    Templates
+                    {t("templates")}
                 </div>
                 <div className=' w-full  pl-3  bg-white rounded-lg space-x-2 flex items-center'>
                     <AiOutlineSearch size={20} className="text-gray-400" />
@@ -175,7 +177,6 @@ const TemplatesSidebar = () => {
                                     key={`sec-${i}`}  {...section} />
                             ))
                         }
-
                     </div>
                 </div>
             )}

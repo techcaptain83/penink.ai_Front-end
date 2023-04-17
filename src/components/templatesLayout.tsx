@@ -88,7 +88,7 @@ const TemplatesLayout = ({ }: Props) => {
                                     { label: "Spanish", value: "spanish" },
                                 ]} />
                             </div>
-                            <Button fullWidth={false} text="Generate" clickHandler={() => { }} />
+                            <Button fullWidth={false} text={t("generate")} clickHandler={() => { }} />
                         </div>
                     </div>
 
